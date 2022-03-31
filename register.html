@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Project Website - Registration</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Register your account</h1><hr>
+  <a href="index.html">
+    <h2>Home<h2>
+  </a>
+  <!-- Use Get, not POST -->
+
+  <form method=GET">
+    <p>First Name: <input type="text" name="firstname"><br> </p>
+    <p>Last Name: <input type="text" name="lastname"><br> </p>
+    <p>Email: <input type="email" name="email" required><br> </p>
+    <p>Password: <input type="password" name="password" min="8" ><br> </p>
+    <p>Birthday: <input type="date" name="birthday"><br> </p>
+    <p>
+    Gender:
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female
+      <input type="radio" name="gender" value="Non-Binary">Non-Binary<br>
+    </p>
+    <p>
+    Pets:
+      <input type="checkbox" name="cat"> Cat
+      <input type="checkbox" name="dog"> Dog
+      <input type="checkbox" name="exotic"> Exotic Pet<br>
+    </p>
+    <p>
+    Auto:<br>
+      <select name="Auto">
+        <option value="coupe" name="coupe">Coupe</option>
+	<option value="sedan" name="sedan">Sedan</option>
+	<option value="wagon" name="wagon">Wagon</option>
+	<option value="cabriolet" name="cabriolet">Cabriolet</option>
+	<option value="roadster" name="roadster">Roadster</option>
+	<option value="clown shoe" name="clown">Clown Shoe</option>
+      </select><br>
+    <input type="submit" value="Register">
+    <input type="reset"><br>
+  </form>
+</body>
+</html>
+
