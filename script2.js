@@ -1,66 +1,74 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-var li = document.querySelector("li");
 
-//-- Do not repaet yourself -- Use functions
-
-liEvent();
-buttonListElement();
+//function to check input.value length
 
 function inputLength() {
     return input.value.length;
 }
 
+//funtion that contains all elements to create and added to child li field in ul section
+
 function createListItem() {
     var li = document.createElement("li");
     var button = document.createElement("button");
-    li.appendChild(document.createTextNode(input.value));
+    li.appendChild(document.createTextNode(input.value + " "));
     ul.appendChild(li);
     li.appendChild(button);
+    li.classList.add("taskClass");
     button.innerHTML = "Delete";
     input.value = "";
-
-    liEvent();
-    buttonListElement();
+    button.classList.add("delClass");
+    console.log("Create added");
 }
+
+//listen for click function
 
 function addListAfterClick() {
     if (inputLength() > 0) {
        createListItem();
+       console.log('Click Added');
     }
 }
+
+//listen for enter keyfunction
 
 function addListAfterKeypress(event) {
-    if (inputLength() > 0 && event.Keycode === 13) {
+    if (inputLength() > 0 && event.keyCode === 13) {
         createListItem();
+        console.log('Enter Added');
     }
 }
 
-function liEvent() {
-    for(var i=0; i < li.length; i++) {
-       li[i].addEventListener("click", changeClass)
+//toggle item class to done
+
+function doneTask(task) {
+    if (task.target.className === "li") {
+        task.target.classList.toggle("done");
+        console.log("toggle class");
     }
 }
 
-function changeClass(){
-    this.classList.toggle("done");
-}
+//remove item
 
-function buttonListElement() {
-    var button = document.querySelectorAll("li button");
-    for(var i=0; i < button.length; i++){
-        button[i].addEventListener("click", clearElement)
+function delListItem(element) {
+    if (element.target.className === "delClass"){
+        element.target.parentElement.remove();
+        console.log("Deleted list item");
     }
 }
 
-function clearElement() {
-    for(var i=0; i < li.length; i++) {
-        this.parentNode.remove();
-    }
+//function to call and delete element
+
+function handleUlClick(element) {
+    doneTask(element);
+    delListItem(element);
+    console.log("Delete Ul Click");
 }
 
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
+ul.addEventListener("click", handleUlClick);
