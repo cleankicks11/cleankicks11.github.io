@@ -1,0 +1,34 @@
+.box{
+    width: 50px;
+    height: 50px;
+    flex: 1 1 300px;
+}
+
+.container {
+    border: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    flex-wrap: wrap;
+}
+
+.box:nth-of-type(1) {
+    background: darkseagreen;
+}
+.box:nth-of-type(2) {
+    background: darkslategray;
+}
+.box:nth-of-type(3) {
+    background: darkturquoise;
+}
+.box:nth-of-type(4) {
+    background: cadetblue;
+}
+.box:nth-of-type(5) {
+    background: cornflowerblue;
+}
+.box:nth-of-type(6) {
+    background: dimgray;
+}
+
