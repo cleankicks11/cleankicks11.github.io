@@ -1,13 +1,11 @@
 body, html {
     width: 100%;
-    height: 100vh;
     margin: 0;
     font-family: AdiHaus;
 }
 
 .container {
     min-width: 100%;
-    min-height: 100vh;
     background-color: #FFFFFF;
     display: flex;
 }
@@ -32,11 +30,13 @@ body, html {
 
 @font-face {
   src: URL('https://assets.codepen.io/6060109/adihaus_regular.ttf') format('truetype');
+  font-family: AdiHaus;
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   src: url("https://assets.codepen.io/6060109/adihaus_bold.ttf") format("truetype");
+  font-family: AdiHaus;
   font-weight: bold;
   font-style: normal;
 }
@@ -47,7 +47,6 @@ body, html {
 
 .text-container {
     width: 100%;
-    height: 100vh;
     text-align: center;
 }
 

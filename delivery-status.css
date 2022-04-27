@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: url('https://assets.codepen.io/6060109/ZigZag.png');
+}
+
+h2, h5 {
+  color: #2F463D;
+}
+
+h2, h5, h6, a {
+  font-family: Montserrat;
+}
+
+.panel {
+  width: 90%;
+  min-width: 300px;
+  height: 700px;
+  background-color: #fff;
+  margin: 70px auto;
+  box-shadow: 0px 40px 40px -20px #3C7B61;
+  border-radius: 5px;
+  position: relative;
+}
+
+#close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.inner-container {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 55px 45px;
+}
+
+.inner-container > h2 {
+  margin: 20px 0 15px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.inner-container > p {
+  font-family: Ubuntu;
+  font-sie: 14px;
+  line-height: 26px;
+  color: #828282; 
+}
+
+#food-selection {
+  display: flex;
+  align-items: center;
+  background-color: #F0FFF5;
+  border-radius: 5px;
+  margin: 40px 0 20px;
+}
+
+.food-name-price {
+  width: 50%;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.food-name-price h5 {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.food-name-price h6 {
+  font-weight: 500;
+  font-color: #7A8F85;
+  font-size: 12px;
+}
+
+#food-selection a {
+  color: #467A66;
+  font-weight: bold;
+  font-size: 12px;
+}
