@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  font-family: Hellix;
+  background: linear-gradient(7.28deg, #EEF5FF 0%, #FFFFFF 99.69%);
+}
+
+@font-face {
+  src: url('https://assets.codepen.io/6060109/Hellix-SemiBoldItalic.ttf') format('truetype');
+}
+
+h1, h2, h3, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 64px;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 48px;
+  margin-bottom: 15px;  
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h5 {
+  color: #111235;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28.8px;
+  margin-bottom: 15px;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+
+p {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+ul {
+  padding-left: 0;
+  padding: 30px 0;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+input[type="text"] {
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 400;
+  font-family: Hellix;
+  background: url("https://assets.codepen.io/6060109/icon-send.png") white 95% 50% no-repeat;
+}
+
+input::placeholder {
+  color: #111235;
+}
+
+.header-bold {
+  font-weight: 700;
+}
+
+.top-bar {
+  height: 75px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-section-container {
+  padding: 40px 15px;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.content-section-container img {
+  width: 100%;
+}
+
+.btn {
+  text-decoration: none;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  border-radius: 50px;
+  margin: 30px auto;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #4B5092;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #436BAA;
+}
+
+.blue-bg {
+  background-color: #F2F8FF;
+  width: 100%;
+}
+
+.gradient-blue-bg {
+  background: linear-gradient(99.85deg, #BAD5FF 0%, #6487BF 100%);
+}
+
+.panel {
+  border-radius: 30px;
+  padding: 60px 40px;
+  margin-bottom: 20px;
+}
+
+.panel h5 {
+  width: 85%;
+}
+
+.panel-blue {
+  background: #E4F0FF;
+}
+
+.panel-purple {
+  background: rgba(114, 122, 239, 0.1);
+}
+
+.footer-icon {
+  margin: 25px auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-circle {
+  background-color: rgba(128, 173, 245, .2);
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bp-100 {
+  padding-bottom: 100px;
+}
+
+.tp-80 {
+  padding-top: 80px; 
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid black;
+}
