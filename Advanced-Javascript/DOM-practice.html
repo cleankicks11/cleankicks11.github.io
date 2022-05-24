@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1 style="color: blue;">DOM Practice</h1>
+    <p>The DOM is an object that represents our HTML 1:1</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+</body>
+<script>
+    var myHeader = document.getElementsByTagName('h1')[0];
+    myHeader.style
+
+    setInterval(function() {
+      if (myHeader.style.color === 'blue') {
+          myHeader.style.color = 'green';
+      } else {
+        myHeader.style.color = 'blue';
+      }
+    }, 2000);
+</script>
+</html>

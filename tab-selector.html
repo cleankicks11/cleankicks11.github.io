@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Selector Project</title>
+
+     <h1>Tab Selector Project</h1><hr>
+     <a href="index.html">
+     <h2>Home<h2>
+     </a>
+
+    <style>
+      .container {
+        width: 80%;
+        height: 50%;
+        border: 1px solid grey;
+        margin: 0 auto;
+      }
+      .selector {
+	display: flex;
+        border-bottom: 1px solid grey;
+        background-color: #f1f1f1;
+      }
+      .tab {
+        padding: 10px;
+      }
+      .tab:hover {
+        cursor: pointer;
+        background-color: darkgrey;
+      }
+      .content {
+        padding: 10px;
+      }
+      .content-body {
+        display: none;  
+      }
+      .show-active {
+        display: block;
+        animation: fade .6s;
+      }
+      .tab-active {
+        background-color: darkgrey;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>        
+</head>
+<body>
+  <div class="container">
+    <div class="selector">
+        <div class="tab tab-active">
+          Shirts
+        </div>
+        <div class="tab">
+          Pants
+        </div>
+        <div class="tab">
+          Shoes
+        </div>
+    </div>
+
+    <div class="content">
+      <div id="Shirts" class="content-body show-active">
+	<h4>Shirts</h4>
+	<p>Our shirts are the highst quality</p>
+      </div>
+      <div id="Pants" class="content-body">
+	<h4>Pants</h4>
+	<p>Our Pants are the highst quality</p>
+      </div>
+      <div id="Shoes" class="content-body">
+	<h4>Shoes</h4>
+	<p>Our shoes are the highst quality</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setNewActive(el) {
+      var contentBodies = document.getElementsByClassName('content-body');
+      for (var contentBody of contentBodies) {
+        contentBody.classList.remove('show-active');
+      }
+      console.log(el.textContent);
+      document.getElementById(el.textContent.trim()).classList.add('show-active');
+
+      var tabs = document.getElementsByClassName('tab');
+      for (var tab of tabs) {
+        tab.classList.remove('tab-active');
+      }
+      el.classlist.add('tab-active');
+    }
+
+    var tabs = document.getElementsByClassName('tab');
+    for(var tab of tabs) {
+      tab.addEventListener('click', function(e) {
+        setNewActive(e.currentTarget);
+      })
+    }    
+  </script>
+
+</body>
+</html>

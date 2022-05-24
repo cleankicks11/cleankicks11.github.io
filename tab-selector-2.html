@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Let's build a tab selector</title>
+     <h1>Tab Selector Project</h1><hr>
+     <a href="index.html"><h2>Home<h2></a>
+
+    <style>
+      .container {
+	width: 80%;
+	height: 50%;
+	border: 1px solid grey;
+	margin: 0 auto;
+      }
+      .selector {
+        display: flex;
+        border-bottom: 1px solid gray;
+	background-color: #f1f1f1;
+      }
+      .tab {
+        padding: 10px; 
+      }
+      .tab:hover {
+	cursor: pointer;
+        background-color: darkgrey;
+      }
+      .content {
+	padding: 10px;
+      }
+      .content-body {
+        display: none;
+      }
+      .show-active {
+        display: block;
+        animation: fade .6s;
+      }
+      .tab-active {
+        background-color: darkgrey;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="selector">
+        <div class="tab tab-active">
+	  Skateboards
+        </div>
+        <div class="tab">
+	  Bikes
+        </div>
+        <div class="tab">
+	  Inline-Skates
+        </div>
+      </div>
+      <div class="content">
+        <div id="Skateboards" class="content-body show-active">
+	  <h4>Skateboards</h4>
+	  <p>We carry all the brands and sizes</p>
+        </div>
+        <div id="Bikes" class="content-body">
+	  <h4>Bikes</h4>
+	  <p>We have frames, wheels and all the parts</p>
+        </div>
+        <div id="Inline-Skates" class="content-body">
+	  <h4>Inline-Skates</h4>
+	  <p>We carry all the parts to shred the gnar</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      //function to remove show-active class and add to click
+      function setNewActive(el) {
+        //select all .content-body
+        var contentBodies = document.getElementsByClassName('content-body'); 
+        //remove .show-active
+        for (var contentBody of contentBodies) {
+	  contentBody.classList.remove('show-active');
+        }
+        //debug output for show-active 
+        console.log(el.textContent);
+        //add .show-active to clicked element 
+        document.getElementById(el.textContent.trim()).classList.add('show-active');
+
+        var tabs = document.getElementsByClassName('tab');
+        for (var tab of tabs) {
+	  tab.classList.remove('tab-active');
+        }
+	el.classList.add('tab-active');
+      }
+
+      //select .tab class and loop through -- declaritive loop -- for of loop
+      var tabs = document.getElementsByClassName('tab');
+      for (var tab of tabs) {
+        //add click listener to each tab
+        tab.addEventListener('click', function(e) {
+	  setNewActive(e.currentTarget);
+	  //debug e element current target
+          console.log(e.currentTarget);
+        })
+      }
+    </script>
+</body>
+</html>

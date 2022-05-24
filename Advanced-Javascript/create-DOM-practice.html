@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1 style="color: blue;">DOM Practice</h1>
+
+  <div class="container" style="background-color: bisque;">
+    <p>The DOM is an object that represents our HTML 1:1</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+  </div>
+
+</body>
+<script>
+    var button = document.createElement('button');
+    document.body.appendChild(button);
+    button.tetContent = 'click me';
+    button.classList.add('my-button');
+    button.style.backgroundColor = 'black';
+    button.style.color = 'white';
+
+   var myNewPara = document.createElement('p');
+   myNewPara.textContent = "This is the website paragraph written by me";
+   document.body.appendChild(myNewPara);
+   
+   myNewPara.remove();   
+
+   var container = document.getElementsByClassName('container')[0];
+   container.appendChild(myNewPara);
+
+    var response = {
+       body: [
+         'Javascript is an object oriented language!'
+         'It\'s where object methods, attirubtes, variables and values'
+      ]
+    }
+
+   var firstParagraph = response.body[0];
+
+    for ( var i = 0; i < response.body.length; i++) {
+      var myPara = document.createElement('p');
+      myPara.textContent = response.body[i];
+      var container = document.getElementsByClassName('container')[0];
+      myPara.classList.add('body-paragragh');
+      myPara.style.color = 'red';
+      constainer.appendChild(myPara);
+    }
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1 style="color: blue;">DOM Practice</h1>
+
+  <div class="container" style="background-color: bisque;">
+    <p>The DOM is an object that represents our HTML 1:1</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+  </div>
+  <button>Click me</button>
+</body>
+<script>
+
+    var myButton = document.querySelector('button')[0];
+
+    var paragraphs = document.querySelectorAll('p');
+
+    var container = document.Selector('.container');
+
+    button.addEventListener('click', function() {
+      container.style.color = 'red';
+    })
+
+    button.addEventListener('click', function() {
+       for(var p in paragraphs) {
+          p.style.color = 'red';
+       }
+    })
+
+    button.addEventListener('click', function() {
+      console.log('clicked');
+    })
+
+    
+
+</script>
+
+</html>

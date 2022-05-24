@@ -30,14 +30,20 @@
     <h1 style="color:blue; font-size:12px" >
       Great Website
     </h1>
-    <h1 onclick="console.log('hello');">
+    <h1 style="color: blue;" onclick="console.log('hello');">
       Javascript
     </h1>
-   <style>
-     h1 {
-	color: blue;
-    }
-   </style>
+     <script>
+      var myHeader = document.getElementsByTagName('h1')[2];
+
+      setInterval(function() {
+        if (myHeader.style.color === 'blue') {
+          myHeader.style.color = 'green';
+        } else {
+          myHeader.style.color = 'blue';
+        }
+      }, 2000);
+   </script>
    <script>
       console.log('hello')
    </script>
@@ -68,6 +74,9 @@
   <a class="linktext" href="delivery-status-desktop.html">Delivery Status Desktop</a><br>
   <a class="linktext" href="landing-page.html">Landing Page Mobile</a><br>
   <a class="linktext" href="landing-page-desktop.html">Landing Page Desktop</a><br>
+  <a class="linktext" href="javascript-practice.html">Shopify Javascript</a><br>
+  <a class="linktext" href="tab-selector-2.html">Tab Selector</a><br>
+  <a class="linktext" href="quiz-app-1.html">Cyber Security Quiz</a><br>
 </div>
   <div id="categories">  
     <p><strong><h2>News</h2></strong></p><hr>

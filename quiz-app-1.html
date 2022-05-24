@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Selector Project</title>
+
+     <h1>Tab Selector Project</h1><hr>
+     <a href="index.html">
+     <h2>Home<h2>
+     </a>
+      <style>
+      .container {
+        width: 80%;
+        height: 50%;
+        border: 1px solid grey;
+        margin: 0 auto;
+      }
+      .selector {
+        display: flex;
+        border-bottom: 1px solid gray;
+        background-color: #f1f1f1;
+      }
+      .footer {
+        display: flex;
+        border-top: 1px solid gray;
+        background-color: #f1f1f1;
+      }
+      .tab {
+        padding: 10px;
+      }
+      .tab:hover {
+        cursor: pointer;
+        background-color: darkgrey;
+      }
+      .content {
+        padding: 10px;
+      }
+      .footer {
+        padding: 10px;
+      }
+      .direction {
+        padding: 10px;
+      }
+      .content-body {
+        display: none;
+      }
+      .show-active {
+        display: block;
+        animation: fade .6s;
+      }
+      .tab-active {
+        background-color: darkgrey;
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="selector">
+        <div class="tab tab-active">
+          Question-1
+        </div>
+        <div class="tab">
+          Question-2
+        </div>
+        <div class="tab">
+          Question-3
+        </div>
+        <div class="tab">
+          Question-4
+        </div>
+        <div class="tab">
+          Question-5
+        </div>
+        <div class="tab">
+          Question-6
+        </div>
+        <div class="tab">
+          Question-7
+        </div>
+        <div class="tab">
+          Question-8
+        </div>
+        <div class="tab">
+          Question-9
+        </div>
+        <div class="tab">
+          Question-10
+        </div>
+      </div>
+      <div class="content">
+        <div id="Question-1" class="content-body show-active">
+          Question-1
+        </div>
+        <div id="Question-2" class="content-body">
+          Question-2
+        </div>
+        <div id="Question-3" class="content-body">
+          Question-3
+        </div>
+        <div id="Question-4" class="content-body">
+          Question-4
+        </div>
+        <div id="Question-5" class="content-body">
+          Question-5
+        </div>
+        <div id="Question-6" class="content-body">
+          Question-6
+        </div>
+        <div id="Question-7" class="content-body">
+          Question-7
+        </div>
+        <div id="Question-8" class="content-body">
+          Question-8
+        </div>
+        <div id="Question-9" class="content-body">
+          Question-9
+        </div>
+        <div id="Question-10" class="content-body">
+          Question-10
+        </div>
+      </div>
+      <div class="footer">
+        <div class="direction">
+          Previous
+        </div>
+        <div class="direction">
+          Next
+        </div>
+      </div>
+    </div>
+</body>
+</html>
