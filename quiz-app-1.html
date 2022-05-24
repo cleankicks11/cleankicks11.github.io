@@ -50,6 +50,18 @@
       .tab-active {
         background-color: darkgrey;
       }
+      .button {
+        border: 1px solid black;
+        color: black;
+	padding: 15px 32px;
+	border-radius: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+      }
   </style>
 </head>
 <body>
@@ -70,62 +82,161 @@
         <div class="tab">
           Question-5
         </div>
-        <div class="tab">
-          Question-6
-        </div>
-        <div class="tab">
-          Question-7
-        </div>
-        <div class="tab">
-          Question-8
-        </div>
-        <div class="tab">
-          Question-9
-        </div>
-        <div class="tab">
-          Question-10
-        </div>
+	<div class="tab">
+	  Answer-Key
+	</div>
       </div>
       <div class="content">
         <div id="Question-1" class="content-body show-active">
           Question-1
+	  <p>How do you Mitigate SSH Vulnerability?</p>
+	     <div>
+               <label for="male">Change Default Port</label>
+               <input type="radio" name="q1" value="1" id="1">
+             </div>
+             <div>
+               <label for="female">Load Balancer</label>
+               <input type="radio" name="q1" value="2" id="2">
+             </div>
+             <div>
+               <label for="non-binary">Air gap network</label>
+               <input type="radio" name="q1" value="3" id="3">
+             </div>
+             <div>
+               <label for="non-binary">Close the port</label>
+               <input type="radio" name="q1" value="4" id="4">
+             </div>
         </div>
         <div id="Question-2" class="content-body">
           Question-2
+          <p>What is a Malware prime objective?</p>
+             <div>
+               <label for="male">Clean Hard drive</label>
+               <input type="radio" name="q2" value="1" id="1">
+             </div>
+             <div>
+               <label for="female">Disrupt, damage or gain access</label>
+               <input type="radio" name="q2" value="2" id="2">
+             </div>
+             <div>
+               <label for="non-binary">Physical Security</label>
+               <input type="radio" name="q2" value="3" id="3">
+             </div>
+             <div>
+               <label for="non-binary">Speed up internet</label>
+               <input type="radio" name="q2" value="4" id="4">
+             </div>
+
         </div>
         <div id="Question-3" class="content-body">
           Question-3
+          <p>What are NIDS and HIDS?</p>
+             <div>
+               <label for="male">Intrusion and Monitoring detection</label>
+               <input type="radio" name="q3" value="1" id="1">
+             </div>
+             <div>
+               <label for="female">Network appliance Companies</label>
+               <input type="radio" name="q3" value="2" id="2">
+             </div>
+             <div>
+               <label for="non-binary">Cloud service Providers</label>
+               <input type="radio" name="q3" value="3" id="3">
+             </div>
+             <div>
+               <label for="non-binary">Code Injection Types</label>
+               <input type="radio" name="q3" value="4" id="4">
+             </div>
+
         </div>
         <div id="Question-4" class="content-body">
           Question-4
+          <p>What is Initial Vector (IV) encryption?</p>
+             <div>
+               <label for="male">Number used to salt plain text passwords</label>
+               <input type="radio" name="q4" value="1" id="1">
+             </div>
+             <div>
+               <label for="female">Encryption Standard</label>
+               <input type="radio" name="q4" value="2" id="2">
+             </div>
+             <div>
+               <label for="non-binary">Key Pair exchange</label>
+               <input type="radio" name="q4" value="3" id="3">
+             </div>
+             <div>
+               <label for="non-binary">Hashing function</label>
+               <input type="radio" name="q4" value="4" id="4">
+             </div>
+
         </div>
         <div id="Question-5" class="content-body">
           Question-5
+          <p>Which layer of the OSI model handles sequential end-to-end packet delivery</p>
+             <div>
+               <label for="male">Layer 1 Physical</label>
+               <input type="radio" name="q5" value="1" id="1">
+             </div>
+             <div>
+               <label for="female">Layer 2 Data Link</label>
+               <input type="radio" name="q5" value="2" id="2">
+             </div>
+             <div>
+               <label for="non-binary">Layer 4 Transport</label>
+               <input type="radio" name="q5" value="3" id="3">
+             </div>
+             <div>
+               <label for="non-binary">Layer 5 Session</label>
+               <input type="radio" name="q5" value="4" id="4">
+             </div>
+
         </div>
-        <div id="Question-6" class="content-body">
-          Question-6
-        </div>
-        <div id="Question-7" class="content-body">
-          Question-7
-        </div>
-        <div id="Question-8" class="content-body">
-          Question-8
-        </div>
-        <div id="Question-9" class="content-body">
-          Question-9
-        </div>
-        <div id="Question-10" class="content-body">
-          Question-10
-        </div>
-      </div>
-      <div class="footer">
-        <div class="direction">
-          Previous
-        </div>
-        <div class="direction">
-          Next
-        </div>
+	<div id="Answer-Key" class="content-body">
+	  Answer-Key
+	  <p>Question-1 = Change Default Port</p>
+	  <p>Question-2 = Disrupt, damage or gain access</p>
+	  <p>Question-3 = Intrusion and Monitoring detection</p>
+	  <p>Question-4 = Number used to salt plain text passwords</p>
+	  <p>Question-5 = Layer 4 Trasnport</p>
+	</div>
+
       </div>
     </div>
+      <script>
+	//function to remove show-active class and add to click element
+        function setNewActive(el) {
+	  //select all .content-body
+	  var contentBodies = document.getElementsByClassName('content-body');
+          //remove .show-active
+	  for (var contentBody of contentBodies) {
+	    contentBody.classList.remove('show-active');
+	  }
+	  //verify output for show-active
+	  //console.log(el.textContent);
+	  //add .show-active to clicked element
+	  document.getElementById(el.textContent.trim()).classList.add('show-active');
+
+	  var tabs = document.getElementsByClassName('tab');
+	  for (var tab of tabs) {
+	    tab.classList.remove('tab-active');
+	  }
+	  el.classList.add('tab-active');
+	  
+        }
+
+	//select .tab class and loop through element items
+	var tabs = document.getElementsByClassName('tab');
+	for (var tab of tabs) {
+	  //add click listener to each tab
+	  tab.addEventListener('click', function(e) {
+	    setNewActive(e.currentTarget);
+	    //verify output e element current target
+	    //console.log(e.currentTarget);
+	  })
+	}
+	
+	
+      </script>
+
 </body>
 </html>
