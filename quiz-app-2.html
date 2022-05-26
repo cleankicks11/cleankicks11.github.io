@@ -2,15 +2,13 @@
 <html>
 <head>
     <title>Cyber Security Quiz Project</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
      <h1>Cyber Security Quiz Project</h1><hr>
      <a href="index.html">
      <h2>Home<h2>
      </a>
-<script>
-//document.write(Date());
-<button onclick="document.write(Date());" >Get the date!</button>
-</script>
       <style>
       .container {
         width: 80%;
@@ -25,19 +23,11 @@
       }
       .tab {
         padding: 10px;
+	margin: 0 auto;
       }
       .tab:hover {
         cursor: pointer;
         background-color: darkgrey;
-      }
-      .content {
-        padding: 10px;
-      }
-      .footer {
-        padding: 10px;
-      }
-      .direction {
-        padding: 10px;
       }
       .content-body {
         display: none;
@@ -72,28 +62,16 @@ function displayDate() {
 </script>
 <p id="demo"></p>
     <div class="container">
-      <div class="selector">
-        <div class="tab tab-active">
-          Question-1
-        </div>
-        <div class="tab">
-          Question-2
-        </div>
-        <div class="tab">
-          Question-3
-        </div>
-        <div class="tab">
-          Question-4
-        </div>
-        <div class="tab">
-          Question-5
-        </div>
-	<div class="tab">
-	  Answer-Key
-	</div>
-      </div>
-      <div class="content">
-        <div id="Question-1" class="content-body show-active">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">Question #1</a></li>
+          <li><a href="#tab2" data-toggle="tab">Question #2</a></li>
+          <li><a href="#tab3" data-toggle="tab">Question #3</a></li>
+          <li><a href="#tab4" data-toggle="tab">Question #4</a></li>
+          <li><a href="#tab5" data-toggle="tab">Question #5</a></li>
+          <li><a href="#tab6" data-toggle="tab">Answer Key</a></li>
+        </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
           Question-1
 	  <p>How do you Mitigate SSH Vulnerability?</p>
 	     <div>
@@ -112,8 +90,9 @@ function displayDate() {
                <label for="non-binary">Close the port</label>
                <input type="radio" name="q1" value="4" id="4">
              </div>
+	     <a class="btn btn-primary btnNext" >Next</a>
         </div>
-        <div id="Question-2" class="content-body">
+        <div class="tab-pane" id="tab2">
           Question-2
           <p>What is a Malware prime objective?</p>
              <div>
@@ -132,9 +111,10 @@ function displayDate() {
                <label for="non-binary">Speed up internet</label>
                <input type="radio" name="q2" value="4" id="4">
              </div>
-
+               <a class="btn btn-primary btnPrevious" >Previous</a>
+               <a class="btn btn-primary btnNext" >Next</a>
         </div>
-        <div id="Question-3" class="content-body">
+        <div class="tab-pane" id="tab3">
           Question-3
           <p>What are NIDS and HIDS?</p>
              <div>
@@ -153,9 +133,10 @@ function displayDate() {
                <label for="non-binary">Code Injection Types</label>
                <input type="radio" name="q3" value="4" id="4">
              </div>
-
+               <a class="btn btn-primary btnPrevious" >Previous</a>
+               <a class="btn btn-primary btnNext" >Next</a>
         </div>
-        <div id="Question-4" class="content-body">
+        <div class="tab-pane" id="tab4">
           Question-4
           <p>What is Initial Vector (IV) encryption?</p>
              <div>
@@ -174,8 +155,10 @@ function displayDate() {
                <label for="non-binary">Hashing function</label>
                <input type="radio" name="q4" value="4" id="4">
              </div>
+               <a class="btn btn-primary btnPrevious" >Previous</a>
+               <a class="btn btn-primary btnNext" >Next</a>
         </div>
-        <div id="Question-5" class="content-body">
+        <div class="tab-pane" id="tab5">
           Question-5
           <p>Which layer of the OSI model handles sequential end-to-end packet delivery</p>
              <div>
@@ -194,63 +177,28 @@ function displayDate() {
                <label for="non-binary">Layer 5 Session</label>
                <input type="radio" name="q5" value="4" id="4">
              </div>
+               <a class="btn btn-primary btnPrevious" >Previous</a>
+               <a class="btn btn-primary btnNext" >Next</a>
         </div>
-	<div id="Answer-Key" class="content-body">
+	<div class="tab-pane" id="tab6">
 	  Answer-Key
 	  <p>Question-1 = Change Default Port</p>
 	  <p>Question-2 = Disrupt, damage or gain access</p>
 	  <p>Question-3 = Intrusion and Monitoring detection</p>
 	  <p>Question-4 = Number used to salt plain text passwords</p>
 	  <p>Question-5 = Layer 4 Trasnport</p>
+          <a class="btn btn-primary btnPrevious" >Previous</a>
 	</div>
       </div>
     </div>
       <script>
-	//function to remove show-active class and add to click element
-        function setNewActive(el) {
-	  //select all .content-body
-	  var contentBodies = document.getElementsByClassName('content-body');
-          //remove .show-active
-	  for (var contentBody of contentBodies) {
-	    contentBody.classList.remove('show-active');
-	  }
-	  //verify output for show-active
-	  //console.log(el.textContent);
-	  //add .show-active to clicked element
-	  document.getElementById(el.textContent.trim()).classList.add('show-active');
+	 $('.btnNext').click(function(){
+          $('.nav-tabs > .active').next('li').find('a').trigger('click');
+         });
 
-	  var tabs = document.getElementsByClassName('tab');
-	  for (var tab of tabs) {
-	    tab.classList.remove('tab-active');
-	  }
-	  el.classList.add('tab-active');
-	  
-        }
-
-	//select .tab class and loop through element items
-	var tabs = document.getElementsByClassName('tab');
-	for (var tab of tabs) {
-	  //add click listener to each tab
-	  tab.addEventListener('click', function(e) {
-	    setNewActive(e.currentTarget);
-	    //verify output e element current target
-	    //console.log(e.currentTarget);
-	  })
-	}
-	//next button
-
-
-
-	//var button = document.getElementsByClassName('next');
-
-	//for (var btn of button) {
-	//  btn.addEventListener('click', function(b) {
-	//    setNewActive(b.currentTarget);
-	//    console.log(b.currentTarget);
-	//    console.log(b.textContent);
-	//  })
-	//}
-
+         $('.btnPrevious').click(function(){
+          $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+         });
       </script>
 
 </body>
