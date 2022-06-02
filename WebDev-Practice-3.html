@@ -1,0 +1,26 @@
+<div id="main">
+  <p>First</p>
+  <p>Second</p>
+  <p>Third</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $("#main").css({border: "1px solid grey"}).append("<p>Fourth</p>");
+
+    $("p").css({color: "red"}).append("<span>item</span>");
+    $("p").first().next().css({color: 'orange'})
+    $("p")[2].style.color = "blue";
+
+    document.querySelector('p').addEventListener('click', function(e) {
+      console.log('clicked', e.currentTarget.textContent)
+    })
+
+    $('p').click(function(e) {
+      console.log('clicked', e.currentTarget.textContent)
+    })
+
+    $(`<button></button`).css({color: 'white' ,backgroundColor: 'red'}).click(function(p) {
+    $('p').toggle();
+    }).appendTo("#main")
+</script>

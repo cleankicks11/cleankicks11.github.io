@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1>DOM Practice</h1>
+
+  <div class="container" style="background-color: bisque;">
+    <p>This is an object that represents our htmL 1:1!</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+  </div>
+    <button>Click here</button>
+</body>
+<script>
+    //Event Listener
+
+    var clickBtn = document.querySelector('button');
+    var para = document.querySelectorAll('p');
+    var contianer = document.querySelector('.contianer');
+
+    var contianer = document.querySelector('.contianer p:first-of-type');
+
+    clickBtn.addEventListener('click', function() {
+      console.log('Button Click');
+      for (var p of para) {
+      p.style.color = 'red';
+      }
+    }); 
+
+    
+
+
+</script>
+</html>
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Building an HTML tab selector</title>
+  <style>
+      .container {
+	width: 80%;
+	height: 50%;
+	border: 1px solid black;
+	margin: 0 auto;
+      }
+      .selector {
+	display: flex;
+	border-bottom: 1px solid black;
+	background-color: #f1f1f1;
+      }
+      .footer {
+        display: flex;
+        border-top: 1px solid black;
+        background-color: #f1f1f1;
+      }
+      .scroll {
+	padding: 10px;
+      }
+      .scroll:hover {
+	cursor: pointer;
+	background-color: darkgrey;
+      }
+      .tab {
+	padding: 10px;
+      }
+      .tab:hover {
+	cursor: pointer;
+	background-color: darkgrey;
+      }
+      .content {
+	padding: 10px;
+      }
+      .content-body {
+	display: none;
+      }
+      .show-active {
+	display: block;
+      }
+      .tab-active {
+	background-color: grey;
+      }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="selector">
+	    <div class="tab tab-active">
+		Skateboards	    
+	    </div>
+            <div class="tab">
+                Bikes
+	    </div>
+            <div class="tab">
+                Snowboards
+	    </div>
+            <div class="tab">
+                Surfboards
+	    </div>
+        </div>
+	<div class="content">
+	    <div id="Skateboards" class="content-body show-active">
+		<h4>Skateboards</h4>
+		<p>Great quality stuff</p>
+	    </div>
+            <div id="Bikes" class="content-body">
+		<h4>Bikes</h4>
+                <p>Great quality stuff</p>
+            </div>
+            <div id="Snowboards" class="content-body">
+		<h4>Snowboards</h4>
+                <p>Great quality stuff</p>
+            </div>
+            <div id="Surfboards" class="content-body">
+		<h4>Surfboards</h4>
+                <p>Great quality stuff</p>
+            </div>
+	</div>
+	<div class="footer">
+	    <div id="prev" class="scroll">
+		Previous
+	    </div>
+            <div id="next" class="scroll">
+                Next
+            </div>
+	</div>
+    </div>
+  <script>
+     //function to remove 'show-active' class from displayed item and add to clicked/selected class
+     //link tab element to content body element with div id item
+      function setNewActive(elem) {
+	//select all content-body
+	var contentBodies = document.getElementsByClassName('content-body');
+      
+	//remove show-active from last content-body
+	for(var contentBody of contentBodies) {
+	    contentBody.classList.remove('show-active');
+	}
+	//conosle.log to check what textContent is displaying for click of tab element
+	console.log(elem.textContent); 
+	//add show active to click item -- use id to select html element
+	document.getElementById(elem.textContent.trim()).classList.add('show-active');
+
+	//create item to move 'tab-active' class and attributes to tab selected
+	var tabs = document.getElementsByClassName('tab');
+	//loop through the tab class items and remove 'tab-active' class adding it to the clicked tab
+	for(let tab of tabs) {
+	  tab.classList.remove('tab-active');
+	}
+	//add 'tab-active' class to clicked item with arguemnt parameter 'elem' which reads 'click' currentTarget 
+	elem.classList.add('tab-active'); 
+      }
+
+	//initialize next prev buttons
+	const next = document.getElementById('next');
+	const prev = document.getElementById('prev');
+
+	var change = document.getElementsByClassName('scroll');
+
+	//event listeners for next and prev
+	next.addEventListener('click', function(s) {
+	        console.log(s.currentTarget);
+	    })
+        prev.addEventListener('click', function(s) {
+                console.log(s.currentTarget);
+            })
+
+        //dynamic element loop through element - move active class
+        var count = document.getElementsByClassName('tab').length;
+
+	next.addEventListener('click', function() {
+	for(let i = 0; i < count; i++) {
+            var tab = document.getElementsByClassName('tab')[i];
+            var content = document.getElementsByClassName('content-body')[i];
+	    tab.classList.remove('tab-active');
+	    content.classList.remove('show-active');
+	}
+	    tab.classList.add('tab-active');
+	    content.classList.add('show-active');
+	    //console.log(spot);
+	})
+
+
+    //select tab class and loop though each tab class -- declarative - imperative or forEach() method
+	var tabs = document.getElementsByClassName('tab');
+
+	for(let tab of tabs) {
+	  //add click listener to each tab
+	  tab.addEventListener('click', function(e) {
+	      //click with currentTarget displays and select the the html element clicked
+	      console.log(e.currentTarget);
+	      //Call setNewActive function to apply definition
+	      setNewActive(e.currentTarget);
+	  })
+	}
+
+
+    //add click listener to each header tab class
+
+  </script>
+</body>
+</html>

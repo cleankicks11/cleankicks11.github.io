@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1>DOM Practice</h1>
+
+  <div class="container" style="background-color: bisque;">
+    <p>This is an object that represents our htmL 1:1!</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+  </div>
+
+</body>
+<script>
+    //webpage has all sorts of elements and data -- html respnse will contain data to be converted dynamically
+
+    var response = {
+      body: [
+	'This item reps the JSON response from webpage',
+	'We will need to dynamically created html elements to display on page'
+      ]    
+    };
+
+    //create paragraph elements to display JSON data to html elements -- not sure how much data is sent
+
+    //forloop to iterate through JSON response and create, append html elements
+
+    for (var i = 0; i < response.body.length; i++) {
+      var myP = document.createElement('p');
+      myP.textContent = response.body[i];
+      var container = document.getElementsByClassName('container')[0];
+      myP.style.color = 'blue';
+      container.appendChild(myP);
+    }
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Practice</title>
+</head>
+<body>
+    <h1>DOM Practice</h1>
+
+  <div class="container" style="background-color: bisque;">
+    <p>This is an object that represents our htmL 1:1!</p>
+    <p>It's where Javascript, HTML, and CSS come together</p>
+  </div>
+
+</body>
+<script>
+    //What is the DOM?
+    //Create button element -- attach and style element
+    var button = document.createElement('button');
+
+    document.body.appendChild(button);
+
+    button.textContent = 'click me';
+
+    button.classList.add('my-button');
+
+    button.style.backgroundColor = 'black';
+
+    button.style.color = 'white';
+
+    //create paragraph element -- attach and style
+
+    var myNewP = document.createElement('p');
+
+    myNewP.textContent = "This is a dynamic paragraph";
+
+    document.body.appendChild(myNewP);
+
+    //remove === myNewP.remove();
+
+    //DOM elements -- working with a div -- append created element to div
+    //returns array
+    var container = document.getElementsByClassName('container')[0];
+
+    container.appendChild(myNewP);
+
+
+    //Creating elements -- with dynamic data that changes with javascript
+</script>
+</html>

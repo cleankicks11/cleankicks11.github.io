@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <title>AJAX Requests</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <a href="index.html">
+    <h2>Home<h2>
+  </a>
+
+</head>
+<body>
+   <h3>Asynchronous JavaScript and XML</h3>
+  <ol id="demo"></ol>
+</body>
+<script>
+//    $.ajax({
+//      url: 'https://remoteok.com/api',
+//      success: function(data) {
+//	console.log({data});
+//	$('#demo').html(JSON.stringify(data));
+//      }
+//    })
+
+    $.ajax({
+      url: 'https://remoteok.com/api',
+      success: function(data) {
+	console.log({data});
+	for (var job of data) {
+          $(`<li>${job.company}</li>`).appendTo('#demo')
+        }
+      }
+    })
+</script>
+</html>
