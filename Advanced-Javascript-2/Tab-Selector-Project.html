@@ -86,9 +86,9 @@
 	    <div id="prev" class="scroll">
 		Previous
 	    </div>
-            <div id="next" class="scroll">
-                Next
-            </div>
+	    <div id="next" class="scroll">
+		Next
+	    </div>
 	</div>
     </div>
   <script>
@@ -102,7 +102,7 @@
 	for(var contentBody of contentBodies) {
 	    contentBody.classList.remove('show-active');
 	}
-	//conosle.log to check what textContent is displaying for click of tab element
+	//console.log to check what textContent is displaying for click of tab element
 	console.log(elem.textContent); 
 	//add show active to click item -- use id to select html element
 	document.getElementById(elem.textContent.trim()).classList.add('show-active');
@@ -117,34 +117,55 @@
 	elem.classList.add('tab-active'); 
       }
 
+	//function to loop through element indexes and move 'show-active' and 'tab-active' classes
+	function setNextClass(elem) {
+	    //set variable to select all content-body class elements
+	    var content = document.getElementsByClassName('content-body');
+
+	    //loop through elements and remove 'show-active' class
+	    let i = 0;
+	    if (i < content.length - 1) {
+		content[i].classList.remove('show-active');
+		i++;
+		content[i].classList.add('show-active');
+	    }
+
+            //set variable to select all content-body class elements
+            var tab = document.getElementsByClassName('tab');
+	    let j = 0;
+            //loop through elements and remove 'tab-active' class
+            if (j < tab.length - 1) {
+                tab[j].classList.remove('tab-active');
+		j++;
+                tab[j].classList.add('tab-active');
+	    }
+	}
+	
+
+         //set variable for elements list
+        var content = document.getElementsByClassName('content-body');
+        var tab = document.getElementsByClassName('tab');
+
 	//initialize next prev buttons
 	const next = document.getElementById('next');
 	const prev = document.getElementById('prev');
 
-	var change = document.getElementsByClassName('scroll');
 
 	//event listeners for next and prev
-	next.addEventListener('click', function(s) {
-	        console.log(s.currentTarget);
-	    })
-        prev.addEventListener('click', function(s) {
-                console.log(s.currentTarget);
-            })
+	next.addEventListener('click', function(e) {
+	    console.log('Next clicked');
+	    setNextClass(e);
+	});
 
-        //dynamic element loop through element - move active class
-        var count = document.getElementsByClassName('tab').length;
+        prev.addEventListener('click', function() {
+            console.log('Previous clicked');
+        });
 
-	next.addEventListener('click', function() {
-	for(let i = 0; i < count; i++) {
-            var tab = document.getElementsByClassName('tab')[i];
-            var content = document.getElementsByClassName('content-body')[i];
-	    tab.classList.remove('tab-active');
-	    content.classList.remove('show-active');
-	}
-	    tab.classList.add('tab-active');
-	    content.classList.add('show-active');
-	    //console.log(spot);
-	})
+
+
+	
+	
+	
 
 
     //select tab class and loop though each tab class -- declarative - imperative or forEach() method

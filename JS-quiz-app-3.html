@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Quiz App</title>
+  <a href="index.html">
+    <h2>Home<h2>
+  </a>
+<style>
+h1 {
+  color: blue;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>Quiz App</h1>
+
+
+<script>
+//Change h1 color for fun
+var myHeader = document.getElementsByTagName('h1')[0];
+
+setInterval(function() {
+    if (myHeader.style.color === 'blue') {
+        myHeader.style.color = 'red';
+    } else {
+        myHeader.style.color = 'blue';
+    }
+}, 2000);
+
+//Dynamic element div creation for webpage usage
+var container = document.createElement('div');
+
+//attach div element to body of webpage
+document.body.appendChild(container);
+
+//Add class name to div container
+container.className = 'container';
+
+//Create score div element
+var score = document.createElement('div');
+
+//Add score class name to score child div
+score.className = 'score';
+
+//attach score div child element to container div element
+container.appendChild(score);
+
+//create content div for question area
+var content = document.createElement('div');
+
+//add content class name to content div
+content.className = 'content';
+content.id = 'question-area';
+
+//attach content div to container div
+container.appendChild(content);
+
+//content question text div
+var text = document.createElement('div');
+
+//text div id question text
+text.id = 'question-text';
+
+//append question text to content div
+content.appendChild(text);
+ 
+//create options div -- add options div to content div -- add options class name
+var options = document.createElement('div');
+options.className = 'options';
+content.appendChild(options);
+
+//create control div -- add conttrols class name -- attacht to contaienr div
+var controls = document.createElement('div');
+controls.className = 'controls';
+container.appendChild(controls);
+
+
+</script>
+
+</body>
+</html>
