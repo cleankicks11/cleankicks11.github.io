@@ -17,6 +17,7 @@
       .footer {
         display: flex;
         border-top: 1px solid black;
+	border-bottom: 1px solid black;
         background-color: #f1f1f1;
       }
       .scroll {
@@ -50,9 +51,7 @@
 
 <body>
   <h1>Cyber Security Quiz App</h1><hr>
-  <a href="index.html">
-    <h2>Home<h2>
-  </a>
+  <a href="index.html"><h2>Home</h2></a>
 
     <div class="container">
       <div class="selector">
@@ -92,7 +91,6 @@
 
           <div id="Question" class="content-body">
 		<h4>Question #1</h4>
-	    <form method="GET" action="success.html">
               <div>
                 <label for="question-1">Select the defualt port for SSH: </label>
               <div>
@@ -117,6 +115,7 @@
 
       </div>
       </div>
+
 	<div class="footer">
 	    <div id="prev" class="scroll">
 		Previous
@@ -125,6 +124,13 @@
 		Next
 	    </div>
 	</div>
+
+	<div class="question-input">
+	<h3>Add A New Question</h3>
+	<input id="userinput" type="text" placeholder="Enter Item">
+	<button id="enter">Enter</button>
+	</div>
+
   <script>
      //function to remove 'show-active' class from displayed item and add to clicked/selected class
      //link tab element to content body element with div id item
@@ -223,7 +229,40 @@
 	}
 
 
-    //add click listener to each header tab class
+    //button click to add question title to tab list
+    var button = document.getElementById('enter');
+    var input = document.getElementById('userinput');
+    //var tabItem = document.getElementsByClassName('selector');
+
+
+    function createTabItem() {
+	var tabDiv = document.createElement('div');
+	var conDiv = document.createElement('div');
+        var tabItem = document.getElementsByClassName('selector')[0];
+	var conItem = document.getElementsByClassName('content')[0];
+	conItem.appendChild(conDiv);
+	conDiv.classList.add('content-body');
+	conDiv.id = 'Question';
+	tabItem.appendChild(tabDiv);
+	tabDiv.classList.add('tab');
+	tabDiv.appendChild(document.createTextNode(input.value));
+	console.log('div tab class added');
+	console.log(input.value); 
+    }
+
+    function inputLength() {
+      return input.value.length;
+    }
+
+    function addItemAfterClick() {
+      if (inputLength() > 0) {
+         createTabItem();
+         console.log('Click Added');
+      }
+    }
+
+
+    button.addEventListener('click', addItemAfterClick);
 
   </script>
 </body>
