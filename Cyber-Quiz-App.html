@@ -46,6 +46,10 @@
       .tab-active {
 	background-color: grey;
       }
+      #enter {
+	margin: 10px 0;
+	padding: 5px;
+      }
   </style>
 </head>
 
@@ -125,11 +129,22 @@
 	    </div>
 	</div>
 
-	<div class="question-input">
+      <div class="question-input">
 	<h3>Add A New Question</h3>
-	<input id="userinput" type="text" placeholder="Enter Item">
-	<button id="enter">Enter</button>
-	</div>
+	<p>Question Title/Domain</p>
+	<input id="userinput" type="text" placeholder="Enter Title"><br>
+	<p>Question Content</p>
+	<textarea id="question-input" rows="4" cols="30" placeholder="Enter Question"></textarea>
+	<p>Response Option #1</p>
+        <textarea id="answer-1" placeholder="Enter Response"></textarea>
+        <p>Response Option #2</p>
+        <textarea id="answer-2" placeholder="Enter Response"></textarea>
+        <p>Response Option #3</p>
+        <textarea id="answer-3" placeholder="Enter Response"></textarea>
+        <p>Response Option #4</p>
+        <textarea id="answer-4" placeholder="Enter Response"></textarea>
+      </div>
+	<input type="submit" id="enter" value="Enter">
 
   <script>
      //function to remove 'show-active' class from displayed item and add to clicked/selected class
@@ -232,7 +247,12 @@
     //button click to add question title to tab list
     var button = document.getElementById('enter');
     var input = document.getElementById('userinput');
-    //var tabItem = document.getElementsByClassName('selector');
+    var question = document.getElementById('question-input');
+    var answerOne = document.getElementById('answer-1');
+    var answerTwo = document.getElementById('answer-2');
+    var answerThree = document.getElementById('answer-3');
+    var answerFour = document.getElementById('answer-4');
+
 
 
     function createTabItem() {
@@ -246,6 +266,26 @@
 	tabItem.appendChild(tabDiv);
 	tabDiv.classList.add('tab');
 	tabDiv.appendChild(document.createTextNode(input.value));
+	conDiv.innerHTML = `
+	    <h3>${question.value}</h3><br>
+              <div>
+                <label for="A">${answerOne.value}</label>
+                <input type="radio" name="question-1" value="22" id="22">
+              </div>
+              <div>
+                <label for="B">${answerTwo.value}</label>
+                <input type="radio" name="question-1" value="3389" id="3389">
+              </div>
+              <div>
+                <label for="C">${answerThree.value}</label>
+                <input type="radio" name="question-1" value="21" id="21">
+              </div>
+              <div>
+                <label for="D">${answerFour.value}</label>
+                <input type="radio" name="question-1" value="79" id="79">
+              </div>
+	`;
+	
 	console.log('div tab class added');
 	console.log(input.value); 
     }
