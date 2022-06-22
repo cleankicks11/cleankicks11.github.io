@@ -213,22 +213,20 @@
 
 	    console.log('Next clicked');
             //loop through elements and remove 'show-active' class
-            if (i < content.length) {
+            if (i <= content.length) {
                 content[i].classList.remove('show-active');
-                i++;
+		i++;
                 console.log(content[i]);
 		console.log(data);
-
-            }
 		content[i].classList.add('show-active');
+	    }
 
-            if (j < tab.length) {
+            if (j <= tab.length) {
                 tab[j].classList.remove('tab-active');
                 j++;
-                console.log(tab[j]);
-
-            }   
+                console.log(tab[j]);   
 		tab[j].classList.add('tab-active');
+	    }
 	});
 
         prev.addEventListener('click', function() {
@@ -238,22 +236,20 @@
         var data = document.querySelectorAll('input[type="radio"]:checked')[i].value;
 
             //loop through elements and remove 'show-active' class
-            if (i < content.length) {
+            if (i <= content.length) {
                 content[i].classList.remove('show-active');
-                i--;
+		i--;
                 console.log(content[i]);
 		console.log(data);
-
-            }
                 content[i].classList.add('show-active');
+	    }
 
-            if (j < tab.length) {
+            if (j <= tab.length) {
                 tab[j].classList.remove('tab-active');
                 j--;
-                console.log(tab[j]);
-
-            }   
+                console.log(tab[j]);   
                 tab[j].classList.add('tab-active');
+	    }
         });
 
 
