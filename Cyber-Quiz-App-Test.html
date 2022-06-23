@@ -198,41 +198,40 @@
 	const next = document.getElementById('next');
 	const prev = document.getElementById('prev');
 
-	let i = 0;
-	let j = 0;
         var answerBlock = [];
 
 	//event listeners for next and prev
 	next.addEventListener('click', function() {
+	//for ( let i = 0; i < content.length - 1; i++) {
+
         var content = document.getElementsByClassName('content-body');
         var tab = document.getElementsByClassName('tab');
         var data = document.querySelectorAll('input[type="radio"]:checked')[i].value;
-	//var conLength = document.getElementsByClassName('content-body').length;	
+	var length = document.getElementsByClassName('content-body').length;	
 
 	console.log(content.length + 'content before');
-
+        for ( let i = 0; i < content.length - 1; i++) {
 	    console.log('Next clicked');
             //loop through elements and remove 'show-active' class
-            if (i < content.length - 1) {
                 content[i].classList.remove('show-active');
                 console.log(content[i]);
 		console.log(data + ' item checked');
-		i++;
-		content.length--;
+		length--;
 		console.log(length + ' length');
 		//console.log(content.length + ' content after');
 	    }
 		content[i].classList.add('show-active');
 
 
-            if (j < tab.length - 1) {
+            for ( let j = 0; j < tab.length - 1; j++) {
                 tab[j].classList.remove('tab-active');
-                j++;
-		tab.length--;
                 console.log(tab[j]);   
 	    }
 		tab[j].classList.add('tab-active');
 	});
+
+	let i = 0;
+	let j = 0;
 
         prev.addEventListener('click', function() {
 	console.log('Previous clicked');
